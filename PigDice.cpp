@@ -18,6 +18,7 @@ struct GameState
 
 
 // Function Prototypes:
+void display_rules();
 void play_game(GameState &g);
 void take_turn(GameState &g);
 void roll(GameState &g);
@@ -27,15 +28,28 @@ void hold(GameState &g);
 int main()
 {
    GameState my_game; // instantiate a GameState object
-   std::cout<<"Game Score is: "<<my_game.game_score<<std::endl;
-  // display_rules(); // call the display_rules function
+
+  display_rules(); // call the display_rules function
   play_game(my_game); // call the play_game function and pass the GameState object
-   return 0;
+    return 0;
 }
 
 
 // Function Definitions:
 
+void display_rules()
+{
+    std::cout<<std::endl;
+    std::cout<<"\nWelcome to Pig Dice!"<<std::endl;
+    std::cout<<std::endl;
+    std::cout<<"Here are the rules of the game:"<<std::endl;
+    std::cout<<"1. See how many turns it takes you to get to 20 points."<<std::endl;
+    std::cout<<"2. Turn ends when you hold or roll a 1."<<std::endl;
+    std::cout<<"3. If you roll a 1, you lose all points for the turn."<<std::endl;
+    std::cout<<"4. If you hold, you bank all points for the turn to the game score"<<std::endl;
+    std::cout<<std::endl;
+    std::cout<<"Let's Play PIG Dice!"<<std::endl;
+}
 
 void play_game(GameState &g)
 {
@@ -55,7 +69,7 @@ void play_game(GameState &g)
    }
    std::cout<<"\nYou finished with a final score of ";
    std::cout<<g.game_score;
-   std::cout<<" in "<<g.turn_over<<" turns!";
+   std::cout<<" in "<<g.turn_count<<" turns!";
    std::cout<<"\nThanks for playing!"<<std::endl;
 }
 
@@ -81,7 +95,7 @@ void take_turn(GameState &g)
            std::cout<<"Invalid choice!";
        }
    }
-   std::cout<<"Score Banked This Turn: "<<g.score_this_turn;
+   std::cout<<"\nScore Banked This Turn: "<<g.score_this_turn;
 }
 
 
@@ -89,7 +103,7 @@ void roll(GameState &g)
 {
    srand(time(NULL));
    int die = rand() % 6 + 1;
-   std::cout<<"Die: "<<die;
+   std::cout<<"\nDie: "<<die;
    if (die==1)
    {
        std::cout<<"\nTurn over. No score.\n";
@@ -106,5 +120,5 @@ void roll(GameState &g)
 
 void hold(GameState &g)
 {
-   g.game_over = true;
+   g.turn_over = true;
 }

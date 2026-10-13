@@ -1,3 +1,7 @@
+//
+// Austin Messer: Pig Dice 2.0
+//
+
 #ifndef PIGDICE_PDGAME_H
 #define PIGDICE_PDGAME_H
 #include "Turn.h"

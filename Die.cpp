@@ -1,4 +1,8 @@
-#include <random> //Global 
+//
+// Austin Messer: Pig Dice 2.0
+//
+
+#include <random> //Global
 #include "Die.h" //local
 
 Die::Die() // Default Constructor

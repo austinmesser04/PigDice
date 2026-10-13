@@ -1,51 +1,22 @@
 #include <random> //Global 
 #include "Die.h" //local
 
-Die::Die()
+Die::Die() // Default Constructor
 {
-    m_numOfSides=6;
-    m_dieValue=1;
+    m_dieValue=0;
 }
 
-void Die::set_dieValue()
+void Die::rollDie()
 {
-    static std::random_device rd;
-    static std::mt19937 generator(rd());
+    std::random_device rd;
+    std::mt19937 gen(rd());
 
-    std::uniform_int_distribution<int> distribution(1, m_numOfSides);
+    std::uniform_int_distribution<int> dis(1, 6);
 
-    m_dieValue=distribution(generator);
+    m_dieValue=dis(gen);
 }
 
-int Die::get_dieValue()
+int Die::getDieValue() const
 {
-    return m_dieValue;
-}
-
-
-void Die::set_numOfSides(int sides)
-{
-    switch (sides)
-    {
-        case 4:
-            m_numOfSides=4;
-            break;
-
-        case 6:
-            m_numOfSides=6;
-            break;
-
-        case 8:
-            m_numOfSides=8;
-            break;
-
-        default:
-            m_numOfSides=6;
-            break;
-    }
-}
-
-int Die::get_numOfSides()
-{
-    return m_numOfSides;
+    return m_dieValue; // Rules for accessing the data
 }

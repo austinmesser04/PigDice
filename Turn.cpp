@@ -18,7 +18,7 @@ void Turn::setParentGame(PDGame* parentGame) // 6. Added implementation for publ
 void Turn::takeTurn()
 {
     m_turnCount++;
-    std::cout<<"\nTurn "<<m_turnCount;
+    std::cout<<"\n\nTurn "<<m_turnCount;
     // ISSUE: Turn object "part" needs access to m_gameScore in "whole" (PDGame)
     std::cout<<" - Game Score: "<<m_parentGame->getGameScore(); // 9. call PDGame object’s public method to get the game score from the "whole"
     while(!m_turnOver)

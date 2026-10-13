@@ -23,7 +23,7 @@ void Turn::takeTurn()
     std::cout<<" - Game Score: "<<m_parentGame->getGameScore(); // 9. call PDGame object’s public method to get the game score from the "whole"
     while(!m_turnOver)
     {
-        std::cout<<"\nRoll or Hold? (r/h): ";
+        std::cout<<"\n\nRoll or Hold? (r/h): ";
         std::cin>>m_choice;
 
         if(m_choice=='r')

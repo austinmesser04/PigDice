@@ -1,6 +1,4 @@
-//
 // Austin Messer: Pig Dice 2.0
-//
 
 #include <iostream>
 #include "Turn.h"
@@ -68,7 +66,7 @@ void Turn::roll()
     std::cout<<"Die: "<<m_myDie.getDieValue();
     if (m_myDie.getDieValue()==1)
     {
-        std::cout<<"\nTurb over. No score.\n";
+        std::cout<<"\nTurn over. No score.\n";
         m_scoreThisTurn=0;
         m_turnOver=true;
     }

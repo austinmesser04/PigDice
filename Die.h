@@ -1,6 +1,4 @@
-//
 // Austin Messer: Pig Dice 2.0
-//
 
 #ifndef DIE_H
 #define DIE_H

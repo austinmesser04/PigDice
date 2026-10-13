@@ -1,6 +1,4 @@
-//
 // Austin Messer: Pig Dice 2.0
-//
 
 #ifndef PIGDICE_TURN_H
 #define PIGDICE_TURN_H
